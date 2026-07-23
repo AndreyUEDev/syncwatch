@@ -34,3 +34,7 @@ npm run tauri build   # produce the installer
 ## Website
 
 Landing and downloads: [ajimaru.ru/syncwatch](https://ajimaru.ru/syncwatch)
+
+## License
+
+Released for personal, non-commercial use. Syncwatch does not host, store, or distribute any video content — participants play their own local files.
