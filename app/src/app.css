@@ -1,0 +1,167 @@
+@import 'tailwindcss';
+
+/* ---------- токены: нейтральная база (Google) + фиолетовый акцент (бренд) ---------- */
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --bg-glow: rgba(168, 85, 247, 0.06);
+  --surface: #ffffff;
+  --surface-2: #f1f3f4;
+  --surface-hover: #f1f3f4;
+  --border: #dadce0;
+  --text: #202124;
+  --muted: #5f6368;
+  --dim: #80868b;
+
+  --accent: #a855f7;        /* фон интерактивных элементов (кнопки, активный сегмент) */
+  --accent-text: #a855f7;   /* акцентный текст/иконки на поверхностях */
+  --accent-soft: rgba(168, 85, 247, 0.1);
+  --ring: rgba(168, 85, 247, 0.28);
+  --on-accent: #ffffff;
+  --accent-grad: linear-gradient(135deg, #b57bff, #a855f7 60%, #ec4899);
+  --logo-grad: linear-gradient(135deg, #a855f7, #ec4899);
+
+  --danger: #d93025;
+  --danger-soft: rgba(217, 48, 37, 0.1);
+  --shadow: 0 8px 30px -12px rgba(60, 64, 67, 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b1b1d;
+    --bg-glow: rgba(192, 132, 252, 0.08);
+    --surface: #28292c;
+    --surface-2: #303134;
+    --surface-hover: #35363a;
+    --border: #3c4043;
+    --text: #e8eaed;
+    --muted: #9aa0a6;
+    --dim: #80868b;
+
+    --accent: #c084fc;
+    --accent-text: #d8b4fe;
+    --accent-soft: rgba(192, 132, 252, 0.16);
+    --ring: rgba(192, 132, 252, 0.32);
+    --on-accent: #ffffff;
+    --accent-grad: linear-gradient(135deg, #c084fc, #a855f7 60%, #ec4899);
+    --logo-grad: linear-gradient(135deg, #c084fc, #ec4899);
+
+    --danger: #f28b82;
+    --danger-soft: rgba(242, 139, 130, 0.12);
+    --shadow: 0 10px 34px -14px rgba(0, 0, 0, 0.6);
+  }
+}
+
+:root[data-theme='light'] { color-scheme: light; }
+:root[data-theme='dark'] { color-scheme: dark; }
+
+/* Весь UI меряется в rem → масштабируем корневой размер под размер окна */
+html {
+  font-size: clamp(10px, 0.55vw + 1.05vh, 16px);
+}
+
+body {
+  @apply antialiased select-none;
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  overflow: hidden;
+  background:
+    radial-gradient(1100px 620px at 12% -12%, var(--bg-glow), transparent 60%),
+    radial-gradient(1000px 640px at 108% 112%, var(--bg-glow), transparent 58%),
+    var(--bg);
+}
+
+/* ---------- семантические утилиты ---------- */
+.text-muted { color: var(--muted); }
+.text-dim { color: var(--dim); }
+.text-accent { color: var(--accent-text); }
+.bg-surface2 { background: var(--surface-2); }
+.bg-accent-soft { background: var(--accent-soft); }
+.border-token { border-color: var(--border); }
+.bg-divider { background: var(--border); }
+.bg-accent { background: var(--accent); color: var(--on-accent); }
+
+/* сегментный переключатель */
+.seg { color: var(--muted); }
+.seg-on { background: var(--accent); color: var(--on-accent); }
+
+/* карточка */
+.glass {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.15rem;
+  box-shadow: var(--shadow);
+}
+
+/* поле ввода */
+.field {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.85rem;
+  padding: 0.7rem 1rem;
+  color: inherit;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.field::placeholder { color: var(--dim); }
+.field:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+/* главная кнопка */
+.btn-grad {
+  border-radius: 0.85rem;
+  padding: 0.72rem 1.1rem;
+  font-weight: 600;
+  color: var(--on-accent);
+  background: var(--accent-grad);
+  box-shadow: 0 8px 24px -10px var(--accent);
+  transition: transform 0.12s, filter 0.15s;
+}
+.btn-grad:hover:not(:disabled) { filter: brightness(1.06); transform: translateY(-1px); }
+.btn-grad:active:not(:disabled) { transform: translateY(0); }
+
+/* вторичная кнопка */
+.btn-ghost {
+  border-radius: 0.85rem;
+  padding: 0.7rem 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: background 0.15s, border-color 0.15s;
+}
+.btn-ghost:hover:not(:disabled) { background: var(--surface-hover); border-color: var(--accent); }
+
+button:disabled { opacity: 0.45; cursor: default; }
+
+/* пилюля / чип */
+.pill {
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.15s, background 0.15s, transform 0.12s;
+}
+.pill:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  transform: translateY(-1px);
+}
+
+/* градиентный текст */
+.text-grad {
+  background: var(--logo-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* скроллбар */
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
+*::-webkit-scrollbar-thumb:hover { background: var(--muted); }

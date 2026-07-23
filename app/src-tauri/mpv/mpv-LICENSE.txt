@@ -1,0 +1,9 @@
+mpv (bundled as mpv.exe) — media player, licensed under GPLv2+ / LGPLv2.1+.
+
+Copyright © the mpv developers.
+Source code: https://github.com/mpv-player/mpv
+Windows build used: shinchiro mpv-winbuild (https://github.com/shinchiro/mpv-winbuild-cmake)
+Full license text: https://github.com/mpv-player/mpv/blob/master/LICENSE.GPL
+
+Syncwatch bundles an unmodified mpv.exe and communicates with it via its JSON IPC
+interface. mpv is a separate program; Syncwatch does not link against it.

@@ -1,0 +1,10 @@
+node_modules/
+dist/
+target/
+.wrangler/
+*.local
+.env
+.DS_Store
+# бандл mpv (большой бинарь; кладётся при сборке релиза, см. RELEASE.md)
+app/src-tauri/mpv/mpv.exe
+app/src-tauri/mpv/mpv.com

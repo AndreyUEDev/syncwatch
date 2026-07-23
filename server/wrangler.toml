@@ -1,0 +1,15 @@
+name = "syncwatch-signal"
+main = "src/index.ts"
+compatibility_date = "2026-07-01"
+
+[[durable_objects.bindings]]
+name = "ROOMS"
+class_name = "Room"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Room"]
+
+# Секреты (задаются через `wrangler secret put`):
+#   TURN_KEY_ID     - id ключа Cloudflare Realtime TURN
+#   TURN_KEY_TOKEN  - api-токен этого ключа

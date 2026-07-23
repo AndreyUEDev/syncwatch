@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Syncwatch — смотрите видео вместе</title>
+    <meta name="description" content="Syncwatch — совместный просмотр видео с синхронизацией play/pause/seek, чатом и плейлистом. Каждый со своим файлом." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="brand">🎬 Syncwatch</div>
+      <div class="nav-right">
+        <a href="#how" data-i18n="nav_how">Как работает</a>
+        <a href="#faq" data-i18n="nav_faq">Вопросы</a>
+        <button class="lang" id="langToggle">EN</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1 data-i18n="hero_title">Смотрите вместе — каждый со своим файлом</h1>
+        <p class="sub" data-i18n="hero_sub">
+          Syncwatch синхронизирует воспроизведение между всеми участниками комнаты: пауза, перемотка
+          и выбор серии происходят у всех одновременно. Плюс чат поверх видео.
+        </p>
+        <div class="cta">
+          <a class="btn-download" id="downloadBtn" href="#" rel="noopener">
+            <span data-i18n="download">Скачать для Windows</span>
+            <span class="ver" id="verLabel"></span>
+          </a>
+          <span class="hint" data-i18n="download_hint">Бесплатно · Windows 10/11 · ~90 МБ</span>
+        </div>
+        <p class="disclaimer" data-i18n="disclaimer">
+          Syncwatch — инструмент синхронного воспроизведения. Приложение не содержит, не хостит и не
+          распространяет видеоконтент; воспроизводятся только локальные файлы участников.
+        </p>
+      </section>
+
+      <section id="how" class="how">
+        <h2 data-i18n="how_title">Как это работает</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="num">1</div>
+            <h3 data-i18n="step1_t">Создайте комнату</h3>
+            <p data-i18n="step1_d">Получите короткий код и отправьте друзьям.</p>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <h3 data-i18n="step2_t">Все выбирают файлы</h3>
+            <p data-i18n="step2_d">У каждого своя локальная копия. Добавьте папку с сериями — плейлист соберётся сам.</p>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <h3 data-i18n="step3_t">Смотрите синхронно</h3>
+            <p data-i18n="step3_d">Пауза и перемотка у одного — у всех. Чат отображается поверх видео.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="support">
+        <h2 data-i18n="support_title">Поддержите проект</h2>
+        <p data-i18n="support_text">
+          Syncwatch существует только благодаря вашим пожертвованиям. Серверы, разработка и обновления —
+          на энтузиазме. Любая помощь ускоряет развитие.
+        </p>
+        <div class="donate-row">
+          <a class="donate yookassa" id="yookassaBtn" href="#" rel="noopener">💳 ЮKassa</a>
+          <a class="donate tribute" id="tributeBtn" href="#" rel="noopener">💜 Tribute</a>
+        </div>
+      </section>
+
+      <section id="faq" class="faq">
+        <h2 data-i18n="faq_title">Частые вопросы</h2>
+        <details>
+          <summary data-i18n="faq1_q">Работает ли под VPN?</summary>
+          <p data-i18n="faq1_a">
+            Да. Если прямое соединение не проходит (VPN, строгий NAT), Syncwatch автоматически
+            использует защищённый relay-сервер на порту 443. Синхронизация продолжает работать.
+          </p>
+        </details>
+        <details>
+          <summary data-i18n="faq2_q">Нужно ли всем иметь одинаковый файл?</summary>
+          <p data-i18n="faq2_a">
+            Желательно. Программа сверяет имя и размер и подсвечивает несовпадения. При разных файлах
+            синхронизация по времени всё равно работает, но точность может снизиться.
+          </p>
+        </details>
+        <details>
+          <summary data-i18n="faq3_q">Windows пишет «Защита SmartScreen»?</summary>
+          <p data-i18n="faq3_a">
+            Приложение новое и пока без платной подписи. Нажмите «Подробнее» → «Выполнить в любом
+            случае». Все релизы проверяются на VirusTotal.
+          </p>
+        </details>
+        <details>
+          <summary data-i18n="faq4_q">Передаётся ли видео через интернет?</summary>
+          <p data-i18n="faq4_a">
+            Нет. Передаются только команды управления и чат — считанные килобайты. Видео каждый
+            воспроизводит со своего диска.
+          </p>
+        </details>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 Syncwatch</span>
+      <a href="https://github.com/AndreyUEDev/syncwatch" rel="noopener">GitHub</a>
+      <a href="https://github.com/AndreyUEDev/syncwatch/blob/main/LEGAL.md" rel="noopener" data-i18n="footer_legal">Правовая информация</a>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

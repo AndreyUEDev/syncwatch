@@ -1,0 +1,57 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="140" y1="70" x2="900" y2="960" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8b7bff"/>
+      <stop offset="0.5" stop-color="#c46be0"/>
+      <stop offset="1" stop-color="#ff7aa8"/>
+    </linearGradient>
+    <radialGradient id="gloss" cx="330" cy="250" r="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.40"/>
+      <stop offset="0.45" stop-color="#ffffff" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="disc" cx="512" cy="480" r="310" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/>
+    </radialGradient>
+    <linearGradient id="play" x1="420" y1="360" x2="690" y2="670" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#ffd6ec"/>
+    </linearGradient>
+    <filter id="playShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="32" flood-color="#3b0a4a" flood-opacity="0.55"/>
+    </filter>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <marker id="arrow" markerWidth="66" markerHeight="66" refX="18" refY="33"
+            orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M4,4 L50,33 L4,62 Z" fill="#ffffff"/>
+    </marker>
+  </defs>
+
+  <rect width="1024" height="1024" rx="238" fill="url(#bg)"/>
+  <rect width="1024" height="1024" rx="238" fill="url(#gloss)"/>
+
+  <circle cx="512" cy="512" r="300" fill="url(#disc)"/>
+  <circle cx="512" cy="512" r="300" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2"/>
+
+  <!-- дуги-стрелки синхронизации -->
+  <g fill="none" stroke="#ffffff" stroke-width="44" stroke-linecap="round">
+    <path d="M 706 246 A 308 308 0 0 1 784 616" marker-end="url(#arrow)"/>
+    <path d="M 318 778 A 308 308 0 0 1 240 408" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- участники -->
+  <circle cx="512" cy="204" r="30" fill="#ffffff"/>
+  <circle cx="512" cy="820" r="30" fill="#ffffff" fill-opacity="0.92"/>
+
+  <!-- свечение под play -->
+  <circle cx="524" cy="512" r="130" fill="#ffffff" opacity="0.28" filter="url(#glow)"/>
+
+  <!-- play, центрированный -->
+  <g filter="url(#playShadow)">
+    <path d="M 424 384 L 424 640 Q 424 678 458 659 L 682 531 Q 712 514 682 497 L 458 365 Q 424 346 424 384 Z"
+          fill="url(#play)"/>
+  </g>
+</svg>

@@ -1,0 +1,17 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="30" y1="16" x2="228" y2="242" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8b7bff"/>
+      <stop offset="0.5" stop-color="#c46be0"/>
+      <stop offset="1" stop-color="#ff7aa8"/>
+    </linearGradient>
+    <linearGradient id="play" x1="96" y1="80" x2="176" y2="176" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#ffd6ec"/>
+    </linearGradient>
+  </defs>
+  <!-- Упрощённая версия для мелких размеров (трей/16px): только крупный play -->
+  <rect width="256" height="256" rx="60" fill="url(#bg)"/>
+  <path d="M 100 78 L 100 178 Q 100 194 114 186 L 186 140 Q 200 132 186 124 L 114 70 Q 100 62 100 78 Z"
+        fill="url(#play)"/>
+</svg>

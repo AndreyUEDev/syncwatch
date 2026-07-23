@@ -1,0 +1,72 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "Syncwatch",
+  "version": "0.1.9",
+  "identifier": "app.syncwatch.desktop",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5173",
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Syncwatch",
+        "width": 1000,
+        "height": 700,
+        "minWidth": 720,
+        "minHeight": 520,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "plugins": {
+    "deep-link": {
+      "desktop": {
+        "schemes": ["syncwatch"]
+      }
+    },
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEZGNUY1Q0JDQjk3NEJGRjAKUldUd3YzUzV2RnhmLzMrQnVJTmRJTlk4SlJoNi9oc25oSktacmVtV3NUYmlVSU1tRk9NeEFQSlkK",
+      "endpoints": [
+        "https://github.com/AndreyUEDev/syncwatch/releases/latest/download/latest.json"
+      ]
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "createUpdaterArtifacts": true,
+    "resources": {
+      "mpv/mpv.exe": "mpv/mpv.exe",
+      "mpv/mpv-LICENSE.txt": "mpv/mpv-LICENSE.txt"
+    },
+    "publisher": "Syncwatch",
+    "copyright": "© 2026 Syncwatch. Инструмент синхронного воспроизведения локальных видеофайлов.",
+    "shortDescription": "Совместный просмотр видео с синхронизацией",
+    "longDescription": "Syncwatch синхронизирует воспроизведение локальных видеофайлов между участниками комнаты (play/pause/seek), с чатом и плейлистом. Приложение не содержит и не распространяет видеоконтент.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "android": {
+      "debugApplicationIdSuffix": ".debug"
+    },
+    "windows": {
+      "nsis": {
+        "installerIcon": "icons/icon.ico",
+        "headerImage": "installer/header.bmp",
+        "sidebarImage": "installer/sidebar.bmp",
+        "installMode": "currentUser"
+      }
+    }
+  }
+}
